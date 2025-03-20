@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Servana</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="midtermprojstyle.css">
+    <link rel="stylesheet" href="midtermprojstyle.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="site-name">
+            <!-- <img src="logo1.png"> -->
+            Servana
+        </div>
+        <div class="pages">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Workers</a></li>
+            </ul>
+        </div>
+        <div class="sign-in">
+            <select id="sign-button" onchange="navigateToPage()">
+                <option value="" disabled selected>Sign In</option>
+                <option value="sign-in.html">Sign In / Log In</option>
+                <option value="sign-in.html">Sign Up / Register</option>
+                <option value="forgot-password.html">Forgot Password?</option>
+            </select>
+        </div>
+    </div><br><br><br><br><br>
+
+    <div class="filter-container">
+        <input type="text" id="serviceSearch" placeholder="Search services...">
+        
+        <select id="serviceFilter">
+            <option value="">All Services</option>
+            <option value="cleaning">Home Cleaning</option>
+            <option value="grocery">Grocery Delivery</option>
+            <option value="carwash">Car Wash</option>
+            <option value="gardening">Gardening</option>
+            <option value="driver">Personal Driver</option>
+            <option value="walker">Dog Walking</option>
+            <option value="carwash">Car Wash</option>
+            <option value="watering">Plant Watering</option>
+            <option value="laundry">Laundry Service</option>
+        </select>
+    </div>
+
+    <div class="services-container">
+        <div class="heading-container">
+            <h1 class="services-title">Explore Our Services</h1><br>
+            <div class="floating-illustration">
+                <img id="floating-img" src="photo.jpg" alt="Illustration">
+            </div>
+                    </div>
+        <div class="services-list">
+            <div class="service-card">
+                <img src="cleaner.jpg">
+                <div class="service-info">
+                    <h3>Home Cleaning</h3>
+                    <p>Professional cleaning services to keep your home spotless.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="groceryshop.jpg">
+                <div class="service-info">
+                    <h3>Grocery Delivery</h3>
+                    <p>Get fresh groceries delivered to your doorstep.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="carwasher.jpg">
+                <div class="service-info">
+                    <h3>Car Wash</h3>
+                    <p>Convenient and eco-friendly car washing services.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="gardening.jpg">
+                <div class="service-info">
+                    <h3>Gardening</h3>
+                    <p>Professional gardening and landscaping solutions.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="driver.jpg">
+                <div class="service-info">
+                    <h3>Personal Driver</h3>
+                    <p>Reliable personal drivers for your daily commute.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="walker.jpg">
+                <div class="service-info">
+                    <h3>Dog Walker</h3>
+                    <p>Trusted professionals to take your furry friend on a walk.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="water.jpg">
+                <div class="service-info">
+                    <h3>Water Plants</h3>
+                    <p>Keep your plants healthy with scheduled watering services.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="service-card">
+                <img src="laundry.jpg">
+                <div class="service-info">
+                    <h3>Laundry Service</h3>
+                    <p>Hassle-free laundry pickup and delivery at your convenience.</p>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = ["photo.jpg", "photo1.jpg", "photo2.jpg"];
+        let index = 0;
+    
+        function changeFloatingImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("floating-img").src = images[index];
+        }
+    
+        setInterval(changeFloatingImage, 2000);
+
+    function navigateToPage() {
+        var selectBox = document.getElementById("sign-button");
+        var selectedValue = selectBox.value;
+
+        if (selectedValue) {
+            window.location.href = selectedValue; 
+        }
+    }
+
+    document.getElementById("sign-button").addEventListener('change', navigateToPage);
+
+const serviceSearch = document.getElementById("serviceSearch");
+const serviceFilter = document.getElementById("serviceFilter");
+
+serviceSearch.addEventListener('input', filterServices);
+serviceFilter.addEventListener('change', filterServices);
+
+function filterServices() {
+    const searchTerm = serviceSearch.value.toLowerCase();
+    const selectedCategory = serviceFilter.value;
+
+    const serviceCards = document.querySelectorAll(".service-card");
+    
+    serviceCards.forEach(function (card) {
+        const serviceName = card.querySelector(".service-info h3").textContent.toLowerCase();
+        const serviceCategory = card.querySelector(".service-info p").textContent.toLowerCase();
+
+        const matchesSearch = serviceName.includes(searchTerm) || serviceCategory.includes(searchTerm);
+        const matchesCategory = selectedCategory === "" || serviceCategory.includes(selectedCategory);
+
+        if (matchesSearch && matchesCategory) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+filterServices();
+
+
+</script>
+</body>
+</html>
