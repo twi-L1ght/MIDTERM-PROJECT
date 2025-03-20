@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Varela+Round&display=swap" rel="stylesheet">
+    <title>About Us - Servana</title>
+    <link rel="icon" type="image/png" href="logo1.png"> 
+    <link rel="stylesheet" href="midtermprojstyle.css">
+</head>
+<body>
+    <div class="header">
+        <div class="site-name">
+            <!-- <img src="logo1.png"> -->
+            Servana
+        </div>
+        <div class="pages">
+            <ul>
+                <li><a href="MAIN.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Workers</a></li>
+            </ul>
+        </div>
+        <div class="sign-in">
+            <!-- <button>
+                <a href="#">Sign In</a>
+                <img src="down_arrow.png">
+
+            </button> -->
+            <select id="sign-button" onchange="navigateToPage()">
+                <option value="" disabled selected>Sign In</option>
+                <option value="sign-in.html">Sign In / Log In</option>
+                <option value="sign-in.html">Sign Up / Register</option>
+                <option value="forgot-password.html">Forgot Password?</option>
+            </select>
+        </div>
+    </div><br><br><br><br>
+    <div class="about-section">
+        <h1 style="font-family: 'Archivo Black'; font-size: 80px;">Servana</h1>
+        <img src="logo1.png"><br>
+        <p>Your trusted platform for connecting with reliable service providers in your community.</p>
+    </div>
+    
+    <div class="mission-values">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>To simplify everyday tasks by linking customers with skilled service providers, ensuring convenience, reliability, and quality service.</p>
+        </div>
+        <div class="values">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Trust:</strong> Verified and reliable service providers.</li>
+                <li><strong>Convenience:</strong> Easy booking and seamless transactions.</li>
+                <li><strong>Community:</strong> Supporting local businesses and freelancers.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="team1.jpg" alt="Team Member 1">
+                <h3>Severus Snape</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Team Member 2">
+                <h3>Legolas Greenleaf</h3>
+                <p>Chief Operating Officer</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function navigateToPage() {
+        var selectBox = document.getElementById("sign-button");
+        var selectedValue = selectBox.value;
+
+        if (selectedValue) {
+            window.location.href = selectedValue; 
+        }
+    }
+    </script>
+</body>
+</html>

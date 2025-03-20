@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Servana</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="midtermprojstyle.css">
+</head>
+<body>
+    <div class="header">
+        <div class="site-name">
+            <!-- <img src="logo1.png"> -->
+            Servana
+        </div>
+        <div class="pages">
+            <ul>
+                <li><a href="MAIN.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Workers</a></li>
+            </ul>
+        </div>
+        <div class="sign-in">
+            <!-- <button>
+                <a href="#">Sign In</a>
+                <img src="down_arrow.png">
+
+            </button> -->
+            <select id="sign-button" onchange="navigateToPage()">
+                <option value="" disabled selected>Sign In</option>
+                <option value="sign-in.html">Sign In / Log In</option>
+                <option value="sign-in.html">Sign Up / Register</option>
+                <option value="forgot-password.html">Forgot Password?</option>
+            </select>
+        </div>
+    </div>
+    <div class="tagline">
+        <h1>Your Community, Your Services, Your Way.</h1>
+        <p>
+            Finding and booking local services has never been easier. Whether you need a spotless home, fresh groceries, a sparkling car, or thriving plants, we connect you with trusted professionals in your area. Simply browse, book, and relax—your tasks are in good hands.  
+            
+            Get started today and make life easier with Servana!</p>
+    </div>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <img src="map.png">
+                <div class="enter">
+                    <strong>Enter location</strong>
+                    <input type="text" placeholder="Write here">
+                </div>
+            </div>
+    
+            <div class="search-box">
+                <img src="map.png">
+                <div class="enter">
+                    <strong>Enter Service</strong>
+                    <input type="text" placeholder="Write here">
+                </div>
+            </div>
+    
+            <button class="search-btn">
+                <img src="magnifier.png">
+            </button>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div class="pics">
+                <img src="4.png">
+            </div>
+            <h3>Service Providers Profiles</h3>
+            <p>Detailed profiles for businesses and freelancers, including their services, pricing, availability, and certifications.</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="pics">
+                <img src="3.png">
+            </div>
+            <h3>Easy Booking</h3>
+            <p>Find and book the services you need with just a few clicks.</p>
+        </div>
+        <div class="feature-card">
+            <div class="pics">
+                <img src="5.png">
+            </div>
+            <h3>Secure Payments</h3>
+            <p>Safe and hassle-free transactions with multiple payment options.</p>
+        </div>
+    </div>
+    
+    <script>
+        function navigateToPage() {
+        var selectBox = document.getElementById("sign-button");
+        var selectedValue = selectBox.value;
+
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    }
+
+    function smoothScroll(targetId) {
+        var element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    </script>
+</body>
+</html>
